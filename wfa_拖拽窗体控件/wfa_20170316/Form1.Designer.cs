@@ -47,6 +47,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCloseDrag = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -60,6 +61,7 @@
             this.btnSaveControlsInfo.TabIndex = 23;
             this.btnSaveControlsInfo.Text = "保存控件列表";
             this.btnSaveControlsInfo.UseVisualStyleBackColor = true;
+            this.btnSaveControlsInfo.Click += new System.EventHandler(this.btnSaveControlsInfo_Click);
             // 
             // tabPage2
             // 
@@ -116,7 +118,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(429, 306);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "选项卡内页不支持移动";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabControl1
@@ -227,11 +229,22 @@
             this.btnCloseDrag.UseVisualStyleBackColor = true;
             this.btnCloseDrag.Click += new System.EventHandler(this.btnCloseDrag_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(33, 272);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "增加控件";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 618);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCloseDrag);
             this.Controls.Add(this.btnSaveControlsInfo);
             this.Controls.Add(this.tabControl1);
@@ -278,6 +291,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCloseDrag;
+        private System.Windows.Forms.Button button1;
     }
 }
 

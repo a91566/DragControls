@@ -101,6 +101,7 @@ namespace zsbApps
         void MenuClicked_Hide(object sender, EventArgs e)
         {
             this._cms.SourceControl.Visible = false;
+            this._fc.Dispose();
         }
 
         /// <summary>
@@ -189,6 +190,7 @@ namespace zsbApps
         {
             if (!_isOpenDrag) return;
             Control ct = sender as Control;
+            if ( ct is TabPage) return;
             ct.Parent.Refresh();
             ct.BringToFront();
             _fc = new FrameControl(ct);

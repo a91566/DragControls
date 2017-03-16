@@ -30,7 +30,7 @@ namespace wfa_20170316
                 this._setControlsDragMove = new zsbApps.SetControlsDragMove();
                 foreach (Control item in this.Controls)
                 {
-                    if (item is Button)
+                    if (item is Button || item is TabPage)
                     {
                         this._setControlsDragMove.ListNotDrag.Add(item);
                     }
@@ -48,6 +48,19 @@ namespace wfa_20170316
                 this._setControlsDragMove = new zsbApps.SetControlsDragMove();
             }
             this._setControlsDragMove.SetCanOpenDrag(false);
+        }
+
+        private void btnSaveControlsInfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TextBox txb = new TextBox();
+            txb.Parent = this;
+            txb.Location = new Point(0,0);
+            
         }
     }
 }
