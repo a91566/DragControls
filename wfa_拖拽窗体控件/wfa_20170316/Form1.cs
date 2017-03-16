@@ -48,6 +48,7 @@ namespace wfa_20170316
                 this._setControlsDragMove = new zsbApps.SetControlsDragMove();
             }
             this._setControlsDragMove.SetCanOpenDrag(false);
+            //2017年3月16日20:51:36
         }
     }
 }
