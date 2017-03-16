@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wfa_拖拽窗体控件", "wfa_拖拽窗体控件\wfa_拖拽窗体控件.csproj", "{7C65D162-BD97-4F6F-A6C9-9361FE380FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wfa_20170316", "wfa_20170316\wfa_20170316.csproj", "{CA6C41C4-D4F0-43A7-B2DE-3B00DCDED46B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C65D162-BD97-4F6F-A6C9-9361FE380FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C65D162-BD97-4F6F-A6C9-9361FE380FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C65D162-BD97-4F6F-A6C9-9361FE380FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C65D162-BD97-4F6F-A6C9-9361FE380FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA6C41C4-D4F0-43A7-B2DE-3B00DCDED46B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA6C41C4-D4F0-43A7-B2DE-3B00DCDED46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA6C41C4-D4F0-43A7-B2DE-3B00DCDED46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA6C41C4-D4F0-43A7-B2DE-3B00DCDED46B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
