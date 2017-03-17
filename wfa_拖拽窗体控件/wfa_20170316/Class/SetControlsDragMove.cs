@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using wfa_20170316;
 
 //郑少宝 用于窗体控件的拖动处理
 
@@ -235,11 +236,27 @@ namespace zsbApps
         void MouseUp(object sender, MouseEventArgs e)
         {
             if (!_isOpenDrag) return;
-            (sender as Control).Refresh();
+            Control ct = sender as Control;
+            ct.Refresh();
             if (_fc != null)
             {
                 _fc.Visible = true;
                 _fc.Draw();
+
+                DragControlInfo dci = null;
+                if (ct.Tag == null)
+                {
+                    dci = new DragControlInfo();
+                    dci.Name = ct.Name;
+                    dci.ParentName = ct.Parent.Name;
+                }
+                else
+                {
+                    dci = ct.Tag as DragControlInfo;
+                }
+                dci.Location = ct.Location;
+                dci.Size = ct.Size;
+                ct.Tag = dci;
             }
         }
 

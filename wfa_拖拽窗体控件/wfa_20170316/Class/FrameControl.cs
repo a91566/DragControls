@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using wfa_20170316;
 
 namespace zsbApps
 {
@@ -363,6 +364,21 @@ namespace zsbApps
                 
             }
             pPoint = Cursor.Position;
+
+            DragControlInfo dci = null;
+            if (baseControl.Tag == null)
+            {
+                dci = new DragControlInfo();
+                dci.Name = baseControl.Name;
+                dci.ParentName = baseControl.Parent.Name;
+            }
+            else
+            {
+                dci = baseControl.Tag as DragControlInfo;
+            }
+            dci.Location = baseControl.Location;
+            dci.Size = baseControl.Size;
+            baseControl.Tag = dci;
         }        
 
         #endregion
