@@ -159,7 +159,8 @@ namespace zsbApps
             }
             else
             {
-                throw new InvalidOperationException(FileName+" 文件不存在 !");
+                //throw new InvalidOperationException(FileName+" 文件不存在 !");
+                return false;
             }
         }
     }

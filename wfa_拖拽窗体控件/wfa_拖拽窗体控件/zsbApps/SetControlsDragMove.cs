@@ -16,9 +16,14 @@ namespace zsbApps
         private Control _currentControl; //传入的控件
         private Point _pPoint; //上个鼠标坐标
         private Point _cPoint; //当前鼠标坐标
-        FrameControl _fc;//边框控件
+        //private FrameControl _fc;//边框控件
         private ContextMenuStrip _cms;//鼠标右键菜单
         #endregion
+
+        public delegate void SelectedControlHandler(Control c);
+        public event SelectedControlHandler SelectedControlEvent;
+        public delegate void CancelSelectedControlHandler(Control c);
+        public event CancelSelectedControlHandler CancelSelectedControlEvent;
 
         public SetControlsDragMove(Control c)
         {
@@ -131,9 +136,19 @@ namespace zsbApps
         /// <param name="e"></param>
         protected void MouseClick(object sender, MouseEventArgs e)
         {
-            this._currentControl.Parent.Refresh();
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control)
+            {
+                System.Diagnostics.Debug.WriteLine("Press Ctrl");                
+            }
+            else
+            {
+                this.CancelSelectedControlEvent(this._currentControl);
+                this._currentControl.Parent.Refresh();
+            }
+            this.SelectedControlEvent(this._currentControl);
+
             this._currentControl.BringToFront();
-            _fc = new FrameControl(this._currentControl);
+            var _fc = new FrameControl(this._currentControl);
             this._currentControl.Parent.Controls.Add(_fc);
             _fc.Visible = true;
             _fc.Draw();
@@ -157,7 +172,7 @@ namespace zsbApps
             if (e.Button == MouseButtons.Left)
             {
                 SetControlsDragMove.DrawDragBound(this._currentControl);
-                if(_fc != null ) _fc.Visible = false; //先隐藏
+                //if(_fc != null ) _fc.Visible = false; //先隐藏
                 _cPoint = Cursor.Position;//获得当前鼠标位置
                 int x = _cPoint.X - _pPoint.X;
                 int y = _cPoint.Y - _pPoint.Y;
@@ -172,11 +187,11 @@ namespace zsbApps
         void MouseUp(object sender, MouseEventArgs e)
         {
             this._currentControl.Refresh();
-            if (_fc != null)
-            {
-                _fc.Visible = true;
-                _fc.Draw();
-            }
+            //if (_fc != null)
+            //{
+            //    _fc.Visible = true;
+            //    _fc.Draw();
+            //}
         }
 
 
@@ -186,11 +201,11 @@ namespace zsbApps
         void MouseLeave(object sender, EventArgs e)
         {
             return;
-            this._currentControl.Refresh();
-            if (_fc != null)
-            {
-                _fc.Dispose();
-            }
+            //this._currentControl.Refresh();
+            //if (_fc != null)
+            //{
+            //    _fc.Dispose();
+            //}
         }
         #endregion
     }

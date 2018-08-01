@@ -92,6 +92,93 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignObjectsBottomHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignObjectsCenteredHorizontalHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignObjectsCenteredVerticalHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignObjectsLeftHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignObjectsRightHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignObjectsTopHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BringToFrontHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CopyHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CutHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_UndoHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FormRunHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Model.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveKnob.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ObjectsHeightHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ObjectsHHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ObjectsSizeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ObjectsVHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ObjectsWidthHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PasteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PointerHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PropertiesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\property.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveAllHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SendToBackHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timer.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

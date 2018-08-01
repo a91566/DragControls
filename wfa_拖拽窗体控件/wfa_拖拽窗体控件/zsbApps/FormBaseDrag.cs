@@ -18,6 +18,8 @@ namespace zsbApps
         public zsbApps.ControlsDragInfo ControlsDragInfo = new zsbApps.ControlsDragInfo();
         public List<string> ListControlsTreeInfo = new List<string>();
 
+        public Dictionary<string, Control> ListControlsSelect = new Dictionary<string, Control>();
+
         public FormBaseDrag()
         {
             InitializeComponent();
@@ -36,7 +38,19 @@ namespace zsbApps
             {
                 if (!this.ControlsDragInfo.ListNotDrag.Contains(c))
                 {
-                    new zsbApps.SetControlsDragMove(c).AddEvents();
+                    var x = new zsbApps.SetControlsDragMove(c);
+                    x.SelectedControlEvent += (ctrl) =>
+                    {
+                        if (!this.ListControlsSelect.ContainsKey(ctrl.Name))
+                            this.ListControlsSelect.Add(ctrl.Name, ctrl);
+                    };
+                    x.CancelSelectedControlEvent += (ctrl) =>
+                    {
+                        this.ListControlsSelect = new Dictionary<string, Control>();
+                        //if (this.ListControlsSelect.ContainsKey(ctrl.Name))
+                            //this.ListControlsSelect.Remove(ctrl.Name);
+                    };
+                    x.AddEvents(); 
                 }
             }
             foreach (Control c in ct.Controls)

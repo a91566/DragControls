@@ -48,7 +48,8 @@ namespace zsbApps
             base.ControlsDragInfo.ListNotDrag.Add(this.btnLoadSet);
             base.ControlsDragInfo.ListNotDrag.Add(this.btnSaveDragSource);
             base.ControlsDragInfo.ListNotDrag.Add(this.btnLoadDragSource);
-            base.ControlsDragInfo.ListNotDrag.Add(this.btnSaveControlsInfo);            
+            base.ControlsDragInfo.ListNotDrag.Add(this.btnSaveControlsInfo);
+            base.ControlsDragInfo.ListNotDrag.Add(this.toolStrip1);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,11 +94,21 @@ namespace zsbApps
             base.CloseDrag(this);
         }
 
-        
+        private void toolStripBtn_Left_Click(object sender, EventArgs e)
+        {
+            if (base.ListControlsSelect.Count == 0)
+            {
+                MessageBox.Show("no data");
+                return;
+            }
+            MessageBox.Show(string.Join(System.Environment.NewLine, base.ListControlsSelect.Keys.ToList()));
 
-        
-
-        
-        
+            var controls = base.ListControlsSelect.Values.ToList();
+            var left = controls[0].Left;
+            for (int i = 1; i < controls.Count; i++)
+            {
+                controls[i].Left = left;
+            }
+        }
     }
 }
